@@ -43,13 +43,9 @@ int length(Node<L>* head)
 
 int main()
 {
-    Node<int>* head = nullptr;
-    Node<int>* second = nullptr;
-    Node<int>* third = nullptr;
-
-    head = new Node<int>();
-    second = new Node<int>();
-    third = new Node<int>();
+    Node<int>* head = new Node<int>();
+    Node<int>* second = new Node<int>();
+    Node<int>* third = new Node<int>();
 
     head->data = 10;
     head->next = second;
