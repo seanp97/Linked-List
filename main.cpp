@@ -7,11 +7,11 @@ struct Node {
 };
 
 template <typename T>
-void add(Node<T>* head, T value) {
+void add(Node<T>* head, T value) 
+{
+    Node<T>* current = head;
 
-    Node* current = head;
-
-    Node* newNode = new Node();
+    Node<T>* newNode = new Node<T>();
     newNode->data = value;
     newNode->next = nullptr;
 
@@ -25,6 +25,20 @@ void add(Node<T>* head, T value) {
     }
 
     current->next = newNode;
+}
+
+template <typename L>
+int length(Node<L>* head) 
+{
+    Node<L>* curr = head;
+    int total = 0;
+
+    while (curr != nullptr) {
+        curr = curr->next;
+        total++;
+    }
+
+    return total;
 }
 
 int main()
@@ -47,6 +61,10 @@ int main()
     third->next = nullptr;
 
     add(head, 40);
+
+    int x = length<int>(head);
+
+    std::cout << x << std::endl;
 
     Node<int>* node = head;
 
